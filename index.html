@@ -1,0 +1,560 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#050505">
+
+<title>VAYYU — Official Website</title>
+<meta name="description" content="VAYYU — Indian Hip-Hop Artist from Lucknow, India. Enter VAYYU WORLD.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --black:#050505;
+  --white:#f5f5f5;
+  --blue:#182a42;
+  --grey:#999;
+}
+
+* {
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html { scroll-behavior:smooth; }
+
+body {
+  background:var(--black);
+  color:var(--white);
+  font-family:'Inter',sans-serif;
+  overflow-x:hidden;
+}
+
+a { color:inherit; text-decoration:none; }
+
+nav {
+  height:75px;
+  padding:0 7%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  position:absolute;
+  width:100%;
+  z-index:10;
+}
+
+.logo {
+  font-family:'Anton',sans-serif;
+  font-size:30px;
+  letter-spacing:3px;
+}
+
+.menu {
+  display:flex;
+  gap:35px;
+  align-items:center;
+}
+
+.menu a {
+  font-size:11px;
+  letter-spacing:2px;
+  color:#ccc;
+  transition:.3s;
+}
+
+.menu a:hover { color:white; }
+
+.menu-btn {
+  display:none;
+  background:none;
+  border:0;
+  color:white;
+  font-size:27px;
+}
+
+.hero {
+  min-height:780px;
+  height:100vh;
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  background:
+    linear-gradient(to bottom,rgba(0,0,0,.3),rgba(0,0,0,.35),#050505),
+    url('https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=1800&q=85')
+    center 35%/cover;
+}
+
+.hero-content {
+  padding:30px 15px;
+  margin-top:60px;
+}
+
+.eyebrow {
+  font-size:10px;
+  letter-spacing:6px;
+  color:#ccc;
+  margin-bottom:20px;
+}
+
+.hero h1 {
+  font-family:'Anton',sans-serif;
+  font-size:clamp(75px,17vw,190px);
+  letter-spacing:4px;
+  line-height:.9;
+  text-shadow:0 5px 35px #000;
+}
+
+.hero h2 {
+  font-size:13px;
+  font-weight:400;
+  letter-spacing:7px;
+  margin-top:25px;
+}
+
+.hero-button {
+  display:inline-block;
+  margin-top:42px;
+  border:1px solid white;
+  border-radius:40px;
+  padding:15px 38px;
+  font-size:11px;
+  letter-spacing:2px;
+  transition:.3s;
+}
+
+.hero-button:hover {
+  background:white;
+  color:black;
+}
+
+.section {
+  padding:110px 8%;
+}
+
+.section-label {
+  font-size:10px;
+  letter-spacing:5px;
+  color:#999;
+  margin-bottom:18px;
+}
+
+.section-title {
+  font-family:'Anton',sans-serif;
+  font-size:clamp(40px,8vw,85px);
+  font-weight:400;
+  line-height:1;
+  letter-spacing:1px;
+}
+
+.release {
+  background:linear-gradient(120deg,#101b2b,#050505 75%);
+}
+
+.release-card {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:55px;
+  align-items:center;
+  margin-top:55px;
+}
+
+.cover {
+  aspect-ratio:1/1;
+  background:
+    linear-gradient(0deg,rgba(0,0,0,.5),rgba(0,0,0,.1)),
+    url('https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=1000&q=85')
+    center/cover;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  box-shadow:0 20px 60px #000;
+}
+
+.cover h3 {
+  font-family:'Anton',sans-serif;
+  font-size:clamp(40px,8vw,85px);
+  letter-spacing:4px;
+}
+
+.release-info h3 {
+  font-family:'Anton',sans-serif;
+  font-size:55px;
+  font-weight:400;
+}
+
+.release-info p {
+  color:#aaa;
+  margin:15px 0;
+  font-size:13px;
+  line-height:1.8;
+}
+
+.button {
+  display:inline-block;
+  padding:15px 30px;
+  border:1px solid white;
+  border-radius:35px;
+  font-size:10px;
+  letter-spacing:2px;
+  margin-top:20px;
+  transition:.3s;
+}
+
+.button:hover {
+  background:white;
+  color:black;
+}
+
+.music {
+  text-align:center;
+}
+
+.music-grid {
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:20px;
+  margin-top:55px;
+}
+
+.music-item {
+  padding:45px 15px;
+  border:1px solid #252525;
+  transition:.3s;
+}
+
+.music-item:hover {
+  background:#111;
+  transform:translateY(-5px);
+}
+
+.music-item h3 {
+  font-family:'Anton',sans-serif;
+  font-size:35px;
+  font-weight:400;
+  margin-bottom:10px;
+}
+
+.music-item p {
+  color:#888;
+  font-size:11px;
+  letter-spacing:2px;
+}
+
+.about {
+  background:
+    linear-gradient(90deg,rgba(0,0,0,.9),rgba(0,0,0,.55)),
+    url('https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=1600&q=85')
+    center/cover;
+  min-height:530px;
+  display:flex;
+  align-items:center;
+}
+
+.about-content { max-width:650px; }
+
+.about-content p {
+  color:#ccc;
+  font-size:14px;
+  line-height:2;
+  margin-top:30px;
+}
+
+.merch {
+  text-align:center;
+  background:linear-gradient(140deg,#101b2d,#050505 70%);
+}
+
+.merch p {
+  color:#aaa;
+  font-size:13px;
+  margin-top:20px;
+}
+
+.misfits {
+  min-height:420px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  background:
+    linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.9)),
+    url('https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=1600&q=85')
+    center/cover;
+}
+
+.misfits h2 {
+  font-family:'Anton',sans-serif;
+  font-size:clamp(45px,9vw,90px);
+}
+
+.newsletter {
+  text-align:center;
+  padding:100px 20px;
+}
+
+.newsletter p {
+  color:#999;
+  font-size:13px;
+  margin:20px 0;
+}
+
+.newsletter input {
+  width:min(100%,400px);
+  background:#171717;
+  color:white;
+  border:1px solid #444;
+  padding:17px;
+  border-radius:35px;
+  outline:none;
+}
+
+.newsletter button {
+  display:block;
+  margin:15px auto;
+  background:white;
+  border:0;
+  padding:16px 45px;
+  border-radius:35px;
+  font-weight:700;
+  cursor:pointer;
+}
+
+footer {
+  padding:65px 20px 30px;
+  text-align:center;
+  border-top:1px solid #202020;
+}
+
+.footer-logo {
+  font-family:'Anton',sans-serif;
+  font-size:55px;
+  letter-spacing:5px;
+  margin:25px 0;
+}
+
+.socials {
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:30px;
+  margin:35px 0;
+}
+
+.socials a {
+  font-size:11px;
+  letter-spacing:2px;
+  color:#bbb;
+}
+
+.socials a:hover { color:white; }
+
+.copyright {
+  color:#666;
+  font-size:9px;
+  letter-spacing:2px;
+  margin-top:50px;
+}
+
+@media(max-width:700px) {
+  nav { padding:0 6%; }
+
+  .menu-btn { display:block; }
+
+  .menu {
+    display:none;
+    position:absolute;
+    top:75px;
+    left:0;
+    width:100%;
+    background:#080808;
+    padding:35px;
+    flex-direction:column;
+    gap:28px;
+  }
+
+  .menu.active { display:flex; }
+
+  .hero { min-height:720px; }
+
+  .release-card {
+    grid-template-columns:1fr;
+    gap:35px;
+  }
+
+  .section { padding:85px 7%; }
+
+  .music-grid { grid-template-columns:1fr; }
+
+  .release-info h3 { font-size:45px; }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <a href="#" class="logo">VAYYU.</a>
+
+  <button class="menu-btn" onclick="toggleMenu()" aria-label="Open menu">☰</button>
+
+  <div class="menu" id="menu">
+    <a href="#music">MUSIC</a>
+    <a href="#about">ABOUT</a>
+    <a href="#merch">MERCH</a>
+    <a href="#contact">CONTACT</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+
+<header class="hero">
+  <div class="hero-content">
+    <div class="eyebrow">OFFICIAL ARTIST WEBSITE</div>
+    <h1>VAYYU</h1>
+    <h2>VAYYU WORLD</h2>
+    <a href="#music" class="hero-button">ENTER THE WORLD ↗</a>
+  </div>
+</header>
+
+<!-- LATEST RELEASE -->
+
+<section class="section release" id="music">
+  <div class="section-label">01 / THE SOUND</div>
+  <div class="section-title">LATEST RELEASE</div>
+
+  <div class="release-card">
+    <div class="cover">
+      <h3>BEPARWAH</h3>
+    </div>
+
+    <div class="release-info">
+      <div class="section-label">NEW RELEASE</div>
+      <h3>BEPARWAH</h3>
+      <p>VAYYU featuring BEATIFIC</p>
+      <p>Enter the sound. Experience the world.</p>
+      <a class="button" href="https://www.youtube.com/@VayyuMusic" target="_blank">WATCH NOW ↗</a>
+      <br>
+      <a class="button" href="https://open.spotify.com/search/VAYYU" target="_blank">STREAM MUSIC ↗</a>
+    </div>
+  </div>
+</section>
+
+<!-- MUSIC -->
+
+<section class="section music">
+  <div class="section-label">02 / EXPLORE</div>
+  <div class="section-title">THE MUSIC</div>
+
+  <div class="music-grid">
+    <a class="music-item" href="https://open.spotify.com/search/VAYYU" target="_blank">
+      <h3>SPOTIFY ↗</h3>
+      <p>LISTEN TO VAYYU</p>
+    </a>
+
+    <a class="music-item" href="https://www.youtube.com/@VayyuMusic" target="_blank">
+      <h3>YOUTUBE ↗</h3>
+      <p>WATCH THE VISUALS</p>
+    </a>
+
+    <a class="music-item" href="https://music.apple.com/" target="_blank">
+      <h3>APPLE MUSIC ↗</h3>
+      <p>DISCOVER THE SOUND</p>
+    </a>
+
+    <a class="music-item" href="https://soundcloud.com/" target="_blank">
+      <h3>SOUNDCLOUD ↗</h3>
+      <p>EXPLORE MORE</p>
+    </a>
+  </div>
+</section>
+
+<!-- ABOUT -->
+
+<section class="section about" id="about">
+  <div class="about-content">
+    <div class="section-label">03 / THE ARTIST</div>
+    <div class="section-title">WHO IS<br>VAYYU?</div>
+
+    <p>
+      VAYYU is an Indian Hip-Hop Artist from Lucknow, India.
+      Blending melodic rap, modern trap and drill,
+      VAYYU creates a sound shaped by ambition,
+      emotion and individuality.
+      <br><br>
+      THIS IS MORE THAN MUSIC. THIS IS VAYYU WORLD.
+    </p>
+  </div>
+</section>
+
+<!-- MERCH -->
+
+<section class="section merch" id="merch">
+  <div class="section-label">04 / THE CULTURE</div>
+  <div class="section-title">OFFICIAL<br>MERCHANDISE</div>
+  <p>VAYYU WORLD. COMING SOON.</p>
+  <a href="https://www.instagram.com/vayyumusic/" class="button">FOLLOW FOR UPDATES ↗</a>
+</section>
+
+<!-- COMMUNITY -->
+
+<section class="misfits">
+  <div>
+    <div class="section-label">05 / THE COMMUNITY</div>
+    <h2>WELCOME TO<br>VAYYU WORLD.</h2>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+
+<section class="newsletter" id="contact">
+  <div class="section-label">STAY CONNECTED</div>
+  <div class="section-title">JOIN THE WORLD.</div>
+  <p>Follow the journey. Be part of the movement.</p>
+  <a href="https://www.instagram.com/vayyumusic/" class="button">FOLLOW VAYYU ↗</a>
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+  <div class="section-label">THE OFFICIAL WEBSITE OF</div>
+  <div class="footer-logo">VAYYU</div>
+  <div class="section-label">VYY4L · VAYYU WORLD 🌪️</div>
+
+  <div class="socials">
+    <a href="https://www.instagram.com/vayyumusic/" target="_blank">INSTAGRAM</a>
+    <a href="https://www.youtube.com/@VayyuMusic" target="_blank">YOUTUBE</a>
+    <a href="https://open.spotify.com/search/VAYYU" target="_blank">SPOTIFY</a>
+    <a href="https://soundcloud.com/" target="_blank">SOUNDCLOUD</a>
+  </div>
+
+  <div class="copyright">
+    © <span id="year"></span> VAYYU. ALL RIGHTS RESERVED.
+  </div>
+</footer>
+
+<script>
+function toggleMenu() {
+  document.getElementById('menu').classList.toggle('active');
+}
+
+document.getElementById('year').textContent = new Date().getFullYear();
+
+document.querySelectorAll('.menu a').forEach(link => {
+  link.addEventListener('click', () => {
+    document.getElementById('menu').classList.remove('active');
+  });
+});
+</script>
+
+</body>
+  </html>
+  
