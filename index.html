@@ -4,10 +4,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#080808">
+  <meta name="theme-color" content="#050505">
 
-  <title>VAYYU — Official Artist Website</title>
-  <meta name="description" content="VAYYU — Indian Hip-Hop Artist from Lucknow, India. Discover music, releases and the world of VAYYU.">
+  <title>VAYYU — Indian Hip-Hop Artist from Lucknow</title>
+  <meta name="description" content="VAYYU, born Rudra Yadav, is an Indian hip-hop artist, rapper and songwriter from Lucknow, India. Explore his music, releases and official artist profiles.">
+  <meta name="keywords" content="VAYYU, Vayyu rapper, VAYYU Lucknow, Indian hip-hop artist, Rudra Yadav, VAYYU music">
+  <meta name="author" content="VAYYU">
+
+  <meta property="og:title" content="VAYYU — Official Artist Website">
+  <meta property="og:description" content="Indian Hip-Hop Artist from Lucknow, India. Welcome to VAYYU WORLD.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="images/IMG_20260417_201832_927.jpg">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,12 +22,12 @@
 
   <style>
     :root {
-      --bg: #080808;
-      --white: #f5f5f2;
-      --muted: #858585;
-      --line: #252525;
-      --font-wide: 'Unbounded', sans-serif;
-      --font-body: 'Inter', sans-serif;
+      --black: #050505;
+      --white: #f5f5f3;
+      --grey: #888888;
+      --line: #242424;
+      --wide: 'Unbounded', sans-serif;
+      --body: 'Inter', sans-serif;
     }
 
     * {
@@ -29,12 +36,15 @@
       box-sizing: border-box;
     }
 
-    html { scroll-behavior: smooth; }
+    html {
+      scroll-behavior: smooth;
+      background: var(--black);
+    }
 
     body {
-      background: var(--bg);
+      background: var(--black);
       color: var(--white);
-      font-family: var(--font-body);
+      font-family: var(--body);
       overflow-x: hidden;
     }
 
@@ -48,37 +58,49 @@
       width: 100%;
     }
 
+    ::selection {
+      background: white;
+      color: black;
+    }
+
     .topbar {
+      height: 85px;
+      padding: 0 6%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       z-index: 10;
-      padding: 28px 6%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
       border-bottom: 1px solid #ffffff20;
     }
 
     .logo {
-      font-family: var(--font-wide);
-      font-size: 23px;
+      font-family: var(--wide);
+      font-size: 22px;
       font-weight: 900;
       letter-spacing: -2px;
     }
 
     nav {
       display: flex;
-      gap: 35px;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
+      gap: 34px;
     }
 
-    nav a { color: #d0d0d0; transition: .3s; }
-    nav a:hover { color: white; }
+    nav a {
+      font-size: 10px;
+      letter-spacing: 2px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: #d0d0d0;
+      transition: .3s;
+    }
+
+    nav a:hover {
+      color: white;
+    }
 
     .hero {
       min-height: 100svh;
@@ -86,31 +108,26 @@
       display: flex;
       align-items: flex-end;
       padding: 0 6% 9%;
+      background: #050505;
       overflow: hidden;
-      background: #111;
     }
 
     .hero-image {
       position: absolute;
       inset: 0;
-      width: 100%;
       height: 100%;
       object-fit: cover;
       object-position: center 30%;
-      opacity: .67;
+      opacity: .66;
     }
 
     .hero::after {
       content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(
-        0deg,
-        #080808 0%,
-        #080808a8 28%,
-        #08080820 75%,
-        #08080875 100%
-      );
+      background:
+        linear-gradient(0deg, #050505 0%, #050505c9 22%, transparent 75%),
+        linear-gradient(180deg, #0505058c 0%, transparent 35%);
     }
 
     .hero-content {
@@ -119,46 +136,50 @@
       width: 100%;
     }
 
-    .eyebrow {
+    .eyebrow,
+    .section-label {
       font-size: 10px;
-      letter-spacing: 4px;
       font-weight: 700;
+      letter-spacing: 4px;
       text-transform: uppercase;
-      margin-bottom: 25px;
+      color: #b5b5b5;
     }
 
     .hero h1 {
-      font-family: var(--font-wide);
+      font-family: var(--wide);
       font-size: clamp(65px, 16.5vw, 220px);
       font-weight: 900;
-      line-height: .95;
+      line-height: 1.1;
       letter-spacing: -.095em;
-      white-space: nowrap;
+      margin: 20px 0;
       margin-left: -.045em;
+      white-space: nowrap;
     }
 
     .hero-bottom {
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      margin-top: 35px;
-      gap: 20px;
+      align-items: center;
+      gap: 25px;
+      margin-top: 25px;
     }
 
     .hero-bottom p {
-      color: #c4c4c4;
-      font-size: 12px;
-      letter-spacing: 2px;
-      line-height: 1.8;
+      color: #bdbdbd;
+      font-size: 11px;
+      letter-spacing: 3px;
+      line-height: 2;
     }
 
     .button {
       display: inline-flex;
-      padding: 16px 25px;
-      border: 1px solid #ffffff80;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid #777;
+      padding: 16px 24px;
       font-size: 10px;
-      letter-spacing: 2px;
       font-weight: 800;
+      letter-spacing: 2px;
       text-transform: uppercase;
       transition: .3s;
     }
@@ -166,69 +187,74 @@
     .button:hover {
       background: white;
       color: black;
+      border-color: white;
     }
 
-    section { padding: 110px 6%; }
+    section {
+      padding: 115px 6%;
+      background: var(--black);
+    }
 
     .section-label {
-      font-size: 10px;
-      letter-spacing: 4px;
-      color: var(--muted);
+      color: var(--grey);
       margin-bottom: 35px;
-      text-transform: uppercase;
     }
 
     .section-title {
-      font-family: var(--font-wide);
-      font-size: clamp(38px, 8vw, 105px);
+      font-family: var(--wide);
+      font-size: clamp(40px, 8vw, 105px);
       font-weight: 900;
       letter-spacing: -.085em;
-      line-height: 1.08;
+      line-height: 1.2;
       text-transform: uppercase;
     }
 
     .release {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 7%;
       align-items: center;
+      gap: 8%;
       margin-top: 55px;
     }
 
     .release-art {
-      aspect-ratio: 1 / 1;
+      background: #101010;
       overflow: hidden;
-      background: #171717;
+      aspect-ratio: 1 / 1;
     }
 
     .release-art img {
+      width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform .7s;
+      transition: transform .8s;
     }
 
-    .release-art:hover img { transform: scale(1.04); }
+    .release-art:hover img {
+      transform: scale(1.04);
+    }
 
     .release-info .small {
-      color: var(--muted);
+      color: var(--grey);
       font-size: 10px;
       letter-spacing: 3px;
-      margin-bottom: 20px;
+      margin-bottom: 22px;
     }
 
     .release-info h3 {
-      font-family: var(--font-wide);
-      font-size: clamp(35px, 6vw, 75px);
+      font-family: var(--wide);
+      font-size: clamp(34px, 6vw, 76px);
       font-weight: 900;
-      letter-spacing: -.08em;
-      line-height: 1.1;
-      margin-bottom: 18px;
+      letter-spacing: -.085em;
+      line-height: 1.2;
+      margin-bottom: 22px;
     }
 
     .release-info p {
-      color: #aaa;
+      color: #999;
       font-size: 13px;
-      line-height: 1.8;
+      line-height: 2;
+      max-width: 430px;
       margin-bottom: 30px;
     }
 
@@ -242,138 +268,240 @@
       grid-template-columns: 1fr 1fr;
       gap: 8%;
       align-items: center;
-      margin-top: 45px;
+      margin-top: 55px;
     }
 
     .about-image {
-      height: 570px;
+      background: #101010;
       overflow: hidden;
-      background: #151515;
+      min-height: 520px;
     }
 
     .about-image img {
-      height: 100%;
+      width: 100%;
+      height: 520px;
       object-fit: cover;
+      object-position: center;
+    }
+
+    .about-copy .identity {
+      font-family: var(--wide);
+      font-size: clamp(17px, 2.1vw, 25px);
+      font-weight: 800;
+      line-height: 1.65;
+      letter-spacing: -.065em;
+      color: white;
+      margin-bottom: 28px;
     }
 
     .about-copy p {
       color: #aaa;
-      font-size: 14px;
-      line-height: 2;
-      margin-bottom: 20px;
+      font-size: 13px;
+      line-height: 2.1;
+      margin-bottom: 19px;
     }
 
-    .about-copy .highlight {
+    .about-copy .facts {
+      border-top: 1px solid var(--line);
+      margin-top: 30px;
+      padding-top: 22px;
+    }
+
+    .fact {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--line);
+      font-size: 11px;
+    }
+
+    .fact span:first-child {
+      color: var(--grey);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .fact span:last-child {
       color: white;
-      font-family: var(--font-wide);
-      font-size: 19px;
-      font-weight: 800;
-      line-height: 1.6;
-      letter-spacing: -.06em;
+      text-align: right;
     }
 
     .gallery-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 15px;
-      margin-top: 45px;
+      gap: 16px;
+      margin-top: 50px;
     }
 
     .gallery-grid img {
+      width: 100%;
       height: 420px;
       object-fit: cover;
-      background: #171717;
+      background: #101010;
     }
 
     .city {
       position: relative;
-      min-height: 450px;
+      min-height: 480px;
       display: flex;
-      flex-direction: column;
-      justify-content: center;
+      align-items: center;
       overflow: hidden;
-      background: #111;
+      background: #050505;
+      border-top: 1px solid var(--line);
     }
 
     .city-image {
       position: absolute;
       inset: 0;
+      width: 100%;
       height: 100%;
       object-fit: cover;
-      opacity: .3;
+      opacity: .22;
+    }
+
+    .city::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, #050505 0%, #05050570 100%);
     }
 
     .city-content {
       position: relative;
-      z-index: 1;
+      z-index: 2;
     }
 
     .city h2 {
-      font-family: var(--font-wide);
-      font-size: clamp(45px, 10vw, 125px);
+      font-family: var(--wide);
+      font-size: clamp(48px, 10vw, 125px);
       font-weight: 900;
       letter-spacing: -.09em;
-      line-height: 1.1;
+      line-height: 1.2;
     }
 
     .city p {
-      margin-top: 20px;
-      color: #bbb;
+      color: #aaa;
+      font-size: 10px;
       letter-spacing: 4px;
-      font-size: 11px;
+      margin-top: 25px;
+    }
+
+    .connect {
+      border-top: 1px solid var(--line);
     }
 
     .links {
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
-      margin-top: 35px;
+      margin-top: 40px;
     }
 
     footer {
-      padding: 65px 6% 30px;
+      background: #050505;
+      padding: 70px 6% 30px;
       border-top: 1px solid var(--line);
     }
 
     .footer-logo {
-      font-family: var(--font-wide);
-      font-size: clamp(45px, 11vw, 130px);
+      font-family: var(--wide);
+      font-size: clamp(45px, 11vw, 135px);
       font-weight: 900;
+      line-height: 1.2;
       letter-spacing: -.095em;
-      line-height: 1.1;
     }
 
     .footer-bottom {
       display: flex;
       justify-content: space-between;
+      flex-wrap: wrap;
       gap: 20px;
-      margin-top: 45px;
-      padding-top: 25px;
       border-top: 1px solid var(--line);
-      color: var(--muted);
+      margin-top: 50px;
+      padding-top: 25px;
+      color: var(--grey);
       font-size: 10px;
       letter-spacing: 2px;
     }
 
-    @media (max-width: 700px) {
-      .topbar { padding: 22px 5%; }
-      .logo { font-size: 18px; }
-      nav { gap: 15px; font-size: 9px; }
-      .hero { padding: 0 5% 12%; }
-      .hero h1 { font-size: 17vw; }
-      .hero-bottom { align-items: flex-start; flex-direction: column; }
-      section { padding: 75px 5%; }
-      .release, .about-grid { grid-template-columns: 1fr; gap: 35px; }
-      .about-image { height: 430px; }
-      .gallery-grid { gap: 9px; }
-      .gallery-grid img { height: 230px; }
-      .city { min-height: 350px; }
-      .footer-bottom { flex-direction: column; }
+    @media(max-width: 700px) {
+      .topbar {
+        height: 72px;
+        padding: 0 5%;
+      }
+
+      .logo {
+        font-size: 18px;
+      }
+
+      nav {
+        gap: 14px;
+      }
+
+      nav a {
+        font-size: 8px;
+        letter-spacing: 1px;
+      }
+
+      .hero {
+        padding: 0 5% 13%;
+      }
+
+      .hero h1 {
+        font-size: 16.5vw;
+      }
+
+      .hero-bottom {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      section {
+        padding: 78px 5%;
+      }
+
+      .release,
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
+
+      .about-image,
+      .about-image img {
+        height: 430px;
+        min-height: 0;
+      }
+
+      .gallery-grid {
+        gap: 10px;
+      }
+
+      .gallery-grid img {
+        height: 230px;
+      }
+
+      .city {
+        min-height: 360px;
+      }
+
+      footer {
+        padding: 55px 5% 25px;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+      }
     }
 
-    @media (max-width: 390px) {
-      nav { gap: 10px; font-size: 8px; }
-      .hero h1 { font-size: 16vw; }
+    @media(max-width: 360px) {
+      nav {
+        gap: 9px;
+      }
+
+      nav a {
+        font-size: 7px;
+      }
     }
   </style>
 </head>
@@ -382,6 +510,7 @@
 
   <header class="topbar">
     <a href="#" class="logo">VAYYU.</a>
+
     <nav>
       <a href="#music">Music</a>
       <a href="#about">About</a>
@@ -391,93 +520,282 @@
 
   <main>
 
+    <!-- HERO -->
+
     <section class="hero">
-      <img class="hero-image" src="images/IMG_20260417_201832_927.jpg" alt="VAYYU artist portrait">
+      <img
+        class="hero-image"
+        src="images/IMG_20260417_201832_927.jpg"
+        alt="VAYYU artist portrait"
+      >
+
       <div class="hero-content">
-        <div class="eyebrow">Indian Hip-Hop Artist · Lucknow, India</div>
+        <div class="eyebrow">
+          Indian Hip-Hop Artist · Lucknow, India
+        </div>
+
         <h1>VAYYU</h1>
+
         <div class="hero-bottom">
-          <p>WELCOME TO MY WORLD.<br>THIS IS VAYYU WORLD.</p>
-          <a class="button" href="#music">Explore Music ↗</a>
+          <p>
+            WELCOME TO MY WORLD.<br>
+            THIS IS VAYYU WORLD.
+          </p>
+
+          <a class="button" href="#music">
+            Explore Music ↗
+          </a>
         </div>
       </div>
     </section>
+
+
+    <!-- MUSIC -->
 
     <section id="music">
       <div class="section-label">01 / The Sound</div>
-      <h2 class="section-title">Latest<br>Release.</h2>
+
+      <h2 class="section-title">
+        Latest<br>Release.
+      </h2>
 
       <div class="release">
+
         <div class="release-art">
-          <img src="images/IMG_20261015_182402_666.jpg" alt="BE PARWAH release artwork">
+          <img
+            src="images/IMG_20261015_182402_666.jpg"
+            alt="BE PARWAH release artwork"
+          >
         </div>
 
         <div class="release-info">
-          <div class="small">LATEST RELEASE · VAYYU × BEATIFIC</div>
+          <div class="small">
+            LATEST RELEASE · VAYYU × BEATIFIC
+          </div>
+
           <h3>BEPARWAH</h3>
-          <p>A new chapter in the VAYYU sound. Listen to the latest release now.</p>
-          <a class="button" href="https://open.spotify.com/artist/0Ex0Z0XUVIb67X2Yi1Gixc?si=HQzpD-S7TSuuSon8enDsaw&utm_source=copy-link" target="_blank" rel="noopener">Listen on Spotify ↗</a>
+
+          <p>
+            A new chapter in the VAYYU sound.
+            Experience the latest release from VAYYU and BEATIFIC.
+          </p>
+
+          <a
+            class="button"
+            href="https://open.spotify.com/artist/0Ex0Z0XUVIb67X2Yi1Gixc?si=HQzpD-S7TSuuSon8enDsaw&utm_source=copy-link"
+            target="_blank"
+            rel="noopener"
+          >
+            Listen on Spotify ↗
+          </a>
         </div>
+
       </div>
     </section>
+
+
+    <!-- ABOUT THE ARTIST -->
 
     <section class="about" id="about">
       <div class="section-label">02 / The Artist</div>
-      <h2 class="section-title">Beyond<br>The Music.</h2>
+
+      <h2 class="section-title">
+        Beyond<br>The Music.
+      </h2>
 
       <div class="about-grid">
+
         <div class="about-image">
-          <img src="images/IMG_20260809_195230_684.jpg" alt="VAYYU in the studio">
+          <img
+            src="images/IMG_20260809_195230_684 (1).jpg"
+            alt="VAYYU in the recording studio"
+          >
         </div>
 
         <div class="about-copy">
-          <p class="highlight">VAYYU — Indian Hip-Hop Artist from Lucknow, India.</p>
-          <p>Rooted in the sound and culture of Lucknow, VAYYU brings together melodic rap, modern hip-hop and contemporary trap influences.</p>
-          <p>Inspired by the city's cypher culture and its distinctive Zubaan-e-Lucknow, his music reflects ambition, relationships, personal journeys and the world around him.</p>
-          <p>Building a sound of his own. Representing where he comes from.</p>
+
+          <div class="identity">
+            VAYYU — Indian Hip-Hop Artist from Lucknow, India.
+          </div>
+
+          <p>
+            VAYYU, born Rudra Yadav, is an Indian hip-hop artist,
+            rapper and songwriter from Lucknow, Uttar Pradesh, India.
+            He began his musical journey in 2025.
+          </p>
+
+          <p>
+            His sound blends melodic rap with modern hip-hop,
+            trap and drill influences, creating music shaped by
+            personal experiences, ambition, relationships and
+            the journey of self-discovery.
+          </p>
+
+          <p>
+            Rooted in Lucknow's local hip-hop and cypher culture,
+            his artistic identity also draws inspiration from
+            the city's distinctive Zubaan-e-Lucknow.
+          </p>
+
+          <p>
+            Through VAYYU WORLD, he continues to build his
+            musical identity while representing his hometown
+            and developing a sound of his own.
+          </p>
+
+          <div class="facts">
+
+            <div class="fact">
+              <span>Artist Name</span>
+              <span>VAYYU</span>
+            </div>
+
+            <div class="fact">
+              <span>Birth Name</span>
+              <span>Rudra Yadav</span>
+            </div>
+
+            <div class="fact">
+              <span>Profession</span>
+              <span>Rapper · Songwriter</span>
+            </div>
+
+            <div class="fact">
+              <span>Origin</span>
+              <span>Lucknow, India</span>
+            </div>
+
+            <div class="fact">
+              <span>Genres</span>
+              <span>Hip-Hop · Trap · Drill</span>
+            </div>
+
+            <div class="fact">
+              <span>Active Since</span>
+              <span>2025</span>
+            </div>
+
+          </div>
         </div>
+
       </div>
     </section>
+
+
+    <!-- GALLERY -->
 
     <section id="gallery">
       <div class="section-label">03 / Visual Archive</div>
-      <h2 class="section-title">The<br>World.</h2>
+
+      <h2 class="section-title">
+        The<br>World.
+      </h2>
 
       <div class="gallery-grid">
-        <img src="images/IMG_20260809_195230_684.jpg" alt="VAYYU visual archive">
-        <img src="images/IMG_20261105_215304_415.jpg" alt="Lucknow visual archive">
+
+        <img
+          src="images/IMG_20260809_195230_684 (1).jpg"
+          alt="VAYYU recording studio"
+        >
+
+        <img
+          src="images/IMG_20261105_215304_415.jpg"
+          alt="VAYYU visual archive"
+        >
+
       </div>
     </section>
+
+
+    <!-- CITY -->
 
     <section class="city">
-      <img class="city-image" src="images/IMG_20261105_215304_415.jpg" alt="">
+
+      <img
+        class="city-image"
+        src="images/IMG_20261105_215304_415.jpg"
+        alt=""
+      >
+
       <div class="city-content">
         <div class="section-label">04 / Home Ground</div>
-        <h2>LUCKNOW<br>226016.</h2>
+
+        <h2>
+          LUCKNOW<br>226016.
+        </h2>
+
         <p>FROM THE CITY. FOR THE WORLD.</p>
       </div>
+
     </section>
 
-    <section>
+
+    <!-- CONNECT -->
+
+    <section class="connect">
       <div class="section-label">05 / Connect</div>
-      <h2 class="section-title">Find<br>VAYYU.</h2>
+
+      <h2 class="section-title">
+        Find<br>VAYYU.
+      </h2>
 
       <div class="links">
-        <a class="button" href="https://open.spotify.com/artist/0Ex0Z0XUVIb67X2Yi1Gixc?si=HQzpD-S7TSuuSon8enDsaw&utm_source=copy-link" target="_blank" rel="noopener">Spotify ↗</a>
-        <a class="button" href="https://music.apple.com/in/artist/vayyu/1856571517?ls" target="_blank" rel="noopener">Apple Music ↗</a>
-        <a class="button" href="https://www.youtube.com/@VayyuMusic" target="_blank" rel="noopener">YouTube ↗</a>
-        <a class="button" href="https://www.instagram.com/vayyumusic/" target="_blank" rel="noopener">Instagram ↗</a>
+
+        <a
+          class="button"
+          href="https://open.spotify.com/artist/0Ex0Z0XUVIb67X2Yi1Gixc?si=HQzpD-S7TSuuSon8enDsaw&utm_source=copy-link"
+          target="_blank"
+          rel="noopener"
+        >
+          Spotify ↗
+        </a>
+
+        <a
+          class="button"
+          href="https://music.apple.com/in/artist/vayyu/1856571517?ls"
+          target="_blank"
+          rel="noopener"
+        >
+          Apple Music ↗
+        </a>
+
+        <a
+          class="button"
+          href="https://www.youtube.com/@VayyuMusic"
+          target="_blank"
+          rel="noopener"
+        >
+          YouTube ↗
+        </a>
+
+        <a
+          class="button"
+          href="https://www.instagram.com/vayyumusic/"
+          target="_blank"
+          rel="noopener"
+        >
+          Instagram ↗
+        </a>
+
       </div>
     </section>
 
   </main>
 
+
+  <!-- FOOTER -->
+
   <footer>
-    <div class="footer-logo">VAYYU<br>WORLD.</div>
+
+    <div class="footer-logo">
+      VAYYU<br>WORLD.
+    </div>
+
     <div class="footer-bottom">
       <span>VYY4L — VAYYU WORLD 🌪️</span>
       <span>© 2026 VAYYU. ALL RIGHTS RESERVED.</span>
     </div>
+
   </footer>
 
 </body>
