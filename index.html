@@ -4,31 +4,27 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#08090b">
+<meta name="theme-color" content="#080808">
 
-<title>VAYYU — Official Website | VAYYU WORLD</title>
+<title>VAYYU — Official Artist Website</title>
 
-<meta name="description" content="VAYYU, born Rudra Yadav, is an Indian hip-hop artist, rapper and songwriter from Lucknow, India. Discover his music, releases and journey through VAYYU WORLD.">
+<meta name="description" content="VAYYU is an Indian Hip-Hop artist, rapper and songwriter from Lucknow, India. Discover his music, releases, visuals and journey through the Indian hip-hop scene. Connected to the creative culture of Lucknow and Zubaan-e-Lucknow.">
 
-<meta name="keywords" content="VAYYU, Vayyu rapper, Vayyu Lucknow, Indian Hip Hop, VAYYU WORLD, Zubaan-e-Lucknow">
-
-<meta property="og:title" content="VAYYU — Official Artist Website">
-<meta property="og:description" content="The voice. The city. The sound. Welcome to VAYYU WORLD.">
-<meta property="og:image" content="images/IMG_20260417_201832_927.jpg">
+<meta property="og:title" content="VAYYU — Official Website">
+<meta property="og:description" content="THE CITY. THE CULTURE. THE SOUND.">
 <meta property="og:type" content="website">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600;700;800&family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 :root {
-  --black: #08090b;
-  --white: #f4f4f1;
-  --grey: #999b9f;
-  --blue: #8ca9d0;
-  --red: #d52b48;
+  --bg: #080808;
+  --white: #f5f5f5;
+  --grey: #929292;
+  --line: #292929;
 }
 
 * {
@@ -42,9 +38,9 @@ html {
 }
 
 body {
-  background: var(--black);
+  background: var(--bg);
   color: var(--white);
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: 'DM Sans', sans-serif;
   overflow-x: hidden;
 }
 
@@ -56,47 +52,57 @@ a {
 img {
   width: 100%;
   display: block;
+  object-fit: cover;
 }
 
-::selection {
-  background: var(--white);
-  color: var(--black);
+/* LOADER */
+
+.loader {
+  position: fixed;
+  inset: 0;
+  background: #050505;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 48px;
+  letter-spacing: 12px;
+  animation: disappear 1.2s forwards;
 }
 
-/* NAVIGATION */
+@keyframes disappear {
+  0%, 65% {opacity:1;}
+  100% {opacity:0; visibility:hidden;}
+}
+
+/* NAVBAR */
 
 nav {
-  position: absolute;
-  z-index: 10;
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding: 25px 7%;
+  height: 85px;
+  padding: 0 7%;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid rgba(255,255,255,.12);
+  justify-content: space-between;
+  border-bottom: 1px solid var(--line);
+  position: absolute;
+  width: 100%;
+  z-index: 10;
 }
 
 .logo {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 30px;
-  font-weight: 900;
-  letter-spacing: 7px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 34px;
+  letter-spacing: 5px;
 }
 
 .nav-links {
   display: flex;
-  gap: 30px;
+  gap: 32px;
   font-size: 11px;
-  font-weight: 600;
   letter-spacing: 2px;
   text-transform: uppercase;
-}
-
-.nav-links a {
-  color: #bbb;
-  transition: .3s;
+  color: #ccc;
 }
 
 .nav-links a:hover {
@@ -106,289 +112,181 @@ nav {
 /* HERO */
 
 .hero {
-  min-height: 760px;
-  height: 100svh;
-  max-height: 1000px;
-  position: relative;
+  min-height: 95vh;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
+  padding: 120px 8% 70px;
+  position: relative;
   overflow: hidden;
-  background: #101114;
 }
 
-.hero-img {
+.hero-image {
   position: absolute;
   inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 35%;
-  filter: grayscale(100%) brightness(.72);
-}
-
-.hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(0,0,0,.2),
-    transparent 30%,
-    rgba(0,0,0,.25) 55%,
-    #08090b 100%
-  );
+  background:
+    linear-gradient(90deg, #080808 5%, rgba(0,0,0,.65) 50%, rgba(0,0,0,.2)),
+    linear-gradient(0deg, #080808, transparent 35%),
+    url('images/IMG_20260417_201832_927.jpg') center 30%/cover;
+  opacity: .72;
+  filter: grayscale(100%);
 }
 
 .hero-content {
   position: relative;
   z-index: 2;
-  width: 100%;
-  padding: 0 7% 75px;
+  max-width: 850px;
 }
 
-.hero-small {
+.eyebrow {
   font-size: 11px;
   letter-spacing: 6px;
-  color: #d0d0d0;
-  margin-bottom: 12px;
+  color: #aaa;
+  margin-bottom: 25px;
 }
 
 .hero h1 {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: clamp(100px, 23vw, 260px);
-  line-height: .75;
-  font-weight: 900;
-  letter-spacing: -5px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(100px, 19vw, 230px);
+  line-height: .78;
+  letter-spacing: -3px;
 }
 
-.hero-bottom {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 30px;
-  flex-wrap: wrap;
-  gap: 20px;
+.hero h1 span {
+  display: block;
 }
 
-.hero-bottom p {
-  color: #aaa;
-  font-size: 12px;
+.hero-description {
+  margin-top: 35px;
+  color: #b7b7b7;
+  font-size: 14px;
   letter-spacing: 3px;
 }
 
-.outline-btn {
-  border: 1px solid #777;
-  padding: 13px 24px;
-  border-radius: 30px;
-  font-size: 10px;
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+  margin-top: 35px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 15px 32px;
+  border: 1px solid white;
+  font-size: 11px;
+  font-weight: 800;
   letter-spacing: 2px;
   transition: .3s;
 }
 
-.outline-btn:hover {
+.btn.primary {
   background: white;
   color: black;
 }
 
-/* COMMON SECTIONS */
+.btn:hover {
+  background: #999;
+  color: black;
+}
+
+/* GENERAL SECTIONS */
 
 section {
   padding: 110px 8%;
 }
 
 .section-label {
-  color: var(--grey);
   font-size: 10px;
   letter-spacing: 5px;
+  color: var(--grey);
   margin-bottom: 25px;
-  text-transform: uppercase;
 }
 
 .section-title {
-  font-family: 'Barlow Condensed', sans-serif;
+  font-family: 'Bebas Neue', sans-serif;
   font-size: clamp(55px, 10vw, 115px);
-  line-height: .88;
-  font-weight: 800;
-  text-transform: uppercase;
+  line-height: .9;
+  letter-spacing: 1px;
 }
 
-/* INTRO */
-
-.intro {
-  text-align: center;
-  padding-top: 130px;
-  padding-bottom: 140px;
-}
-
-.intro h2 {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: clamp(48px, 9vw, 105px);
-  line-height: .95;
-  font-weight: 800;
-  margin-bottom: 35px;
-}
-
-.intro h2 span {
-  color: var(--blue);
-}
-
-.intro p {
-  max-width: 720px;
-  margin: auto;
-  color: #aaa;
-  font-size: clamp(14px, 2vw, 18px);
-  line-height: 2;
-}
-
-/* LATEST RELEASE */
+/* RELEASE */
 
 .release {
-  background: #0d0e12;
+  background: #101010;
 }
 
 .release-grid {
   display: grid;
-  grid-template-columns: 1.1fr .9fr;
+  grid-template-columns: 1fr 1fr;
   gap: 65px;
   align-items: center;
   margin-top: 55px;
 }
 
-.release-art {
-  position: relative;
+.release-cover {
   overflow: hidden;
 }
 
-.release-art img {
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-  transition: transform .7s;
+.release-cover img {
+  aspect-ratio: 1/1;
+  transition: .6s;
 }
 
-.release-art:hover img {
+.release-cover:hover img {
   transform: scale(1.04);
 }
 
 .release-info h3 {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: clamp(65px, 10vw, 120px);
-  line-height: .9;
-  margin-bottom: 15px;
-}
-
-.release-info .artists {
-  color: var(--grey);
-  font-size: 13px;
-  letter-spacing: 3px;
-  margin-bottom: 25px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 65px;
+  letter-spacing: 2px;
 }
 
 .release-info p {
-  color: #aaa;
-  line-height: 1.9;
-  font-size: 14px;
-  margin-bottom: 30px;
+  color: var(--grey);
+  font-size: 13px;
+  line-height: 2;
+  margin: 15px 0 30px;
 }
 
-.button-group {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-}
-
-.button {
-  display: inline-block;
-  border: 1px solid #777;
-  padding: 14px 23px;
+.release-tag {
   font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  transition: .3s;
+  letter-spacing: 4px;
+  color: #aaa;
 }
 
-.button.primary {
-  background: white;
-  color: black;
-  border-color: white;
-}
+/* ABOUT */
 
-.button:hover {
-  background: var(--blue);
-  color: black;
-  border-color: var(--blue);
-}
-
-/* ARTIST STORY */
-
-.story-grid {
+.about-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 65px;
+  gap: 70px;
   align-items: center;
 }
 
-.story-image img {
-  aspect-ratio: 4 / 5;
-  object-fit: cover;
-  filter: saturate(.75);
+.about-image img {
+  aspect-ratio: 4/5;
+  filter: grayscale(100%);
 }
 
-.story-text p {
-  color: #aaa;
-  line-height: 2;
+.about-text {
   font-size: 15px;
-  margin-top: 25px;
+  line-height: 2.2;
+  color: #aaa;
+  margin-top: 30px;
 }
 
-.story-text .location {
-  margin-top: 40px;
-  color: var(--blue);
-  font-size: 12px;
-  letter-spacing: 4px;
-}
-
-/* CITY */
-
-.city {
-  min-height: 430px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  overflow: hidden;
-  text-align: center;
-  background: #101114;
-}
-
-.city img {
-  position: absolute;
-  inset: 0;
-  height: 100%;
-  object-fit: cover;
-  filter: brightness(.3);
-}
-
-.city-content {
-  position: relative;
-  z-index: 1;
-  padding: 40px 15px;
-}
-
-.city h2 {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: clamp(60px, 12vw, 130px);
-  line-height: .9;
-  font-weight: 800;
-}
-
-.city p {
-  font-size: 11px;
+.location {
+  font-family: 'Oswald', sans-serif;
+  font-size: 30px;
   letter-spacing: 5px;
-  color: #ccc;
-  margin-top: 22px;
+  margin-top: 35px;
 }
 
 /* GALLERY */
+
+.gallery {
+  background: #101010;
+}
 
 .gallery-grid {
   display: grid;
@@ -398,146 +296,133 @@ section {
 }
 
 .gallery-grid img {
-  height: 370px;
-  object-fit: cover;
-  filter: saturate(.7);
-  transition: .5s;
+  height: 350px;
+  transition: .4s;
 }
 
 .gallery-grid img:hover {
-  filter: saturate(1);
+  filter: brightness(.7);
 }
 
-/* STREAMING */
+/* MUSIC */
 
-.streaming {
-  text-align: center;
-  background: #0d0e12;
-}
-
-.streaming .section-title {
-  margin-bottom: 35px;
-}
-
-.streaming p {
-  color: #999;
-  font-size: 14px;
-  margin-bottom: 35px;
-}
-
-.stream-links {
-  display: flex;
-  justify-content: center;
+.music-links {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 15px;
-  flex-wrap: wrap;
+  margin-top: 45px;
+}
+
+.music-link {
+  border: 1px solid #333;
+  padding: 30px;
+  font-family: 'Oswald', sans-serif;
+  font-size: 24px;
+  letter-spacing: 2px;
+  transition: .3s;
+}
+
+.music-link:hover {
+  background: white;
+  color: black;
+}
+
+/* CITY */
+
+.city {
+  text-align: center;
+  background:
+    linear-gradient(rgba(0,0,0,.8), rgba(0,0,0,.95)),
+    url('images/IMG_20261105_215304_415.jpg') center/cover;
+  padding: 150px 8%;
+}
+
+.city h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(65px, 12vw, 140px);
+  letter-spacing: 4px;
+}
+
+.city p {
+  color: #aaa;
+  letter-spacing: 5px;
+  font-size: 11px;
+  margin-top: 25px;
 }
 
 /* FOOTER */
 
 footer {
-  padding: 70px 8% 35px;
+  padding: 65px 8% 35px;
   text-align: center;
+  background: #050505;
 }
 
 .footer-logo {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: clamp(65px, 14vw, 150px);
-  font-weight: 900;
-  letter-spacing: 8px;
-}
-
-.footer-tag {
-  color: var(--grey);
-  font-size: 10px;
-  letter-spacing: 6px;
-  margin: 15px 0 40px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 65px;
+  letter-spacing: 12px;
 }
 
 .socials {
   display: flex;
   justify-content: center;
   gap: 30px;
-  flex-wrap: wrap;
-  margin-bottom: 55px;
-}
-
-.socials a {
+  margin: 35px 0;
   font-size: 11px;
   letter-spacing: 2px;
-  color: #aaa;
 }
 
 .socials a:hover {
-  color: white;
+  color: #888;
 }
 
 .copyright {
-  border-top: 1px solid #222;
-  padding-top: 25px;
   color: #666;
   font-size: 10px;
   letter-spacing: 2px;
+  margin-top: 35px;
 }
 
 /* MOBILE */
 
-@media(max-width: 700px) {
+@media(max-width:700px) {
 
   nav {
-    padding: 20px 6%;
+    height: 70px;
+    padding: 0 6%;
   }
 
   .logo {
-    font-size: 24px;
-    letter-spacing: 5px;
+    font-size: 29px;
   }
 
   .nav-links {
-    gap: 13px;
+    gap: 12px;
     font-size: 9px;
-    letter-spacing: 1px;
   }
 
   .hero {
-    min-height: 680px;
-    height: 92svh;
-  }
-
-  .hero-img {
-    object-position: center 35%;
-  }
-
-  .hero-content {
-    padding: 0 6% 65px;
+    min-height: 88vh;
+    padding: 120px 7% 70px;
   }
 
   .hero h1 {
-    font-size: 24vw;
-    letter-spacing: -2px;
-  }
-
-  .hero-bottom p {
-    font-size: 9px;
-    letter-spacing: 2px;
+    font-size: 28vw;
   }
 
   section {
-    padding: 85px 7%;
-  }
-
-  .intro {
-    padding-top: 100px;
-    padding-bottom: 100px;
+    padding: 80px 7%;
   }
 
   .release-grid,
-  .story-grid {
+  .about-grid {
     grid-template-columns: 1fr;
     gap: 35px;
   }
 
   .release-info h3 {
-    font-size: 80px;
+    font-size: 50px;
   }
 
   .gallery-grid {
@@ -545,22 +430,19 @@ footer {
   }
 
   .gallery-grid img {
-    height: 230px;
+    height: 220px;
+  }
+
+  .music-links {
+    grid-template-columns: 1fr;
   }
 
   .city {
-    min-height: 350px;
+    padding: 110px 6%;
   }
 
-  .socials {
-    gap: 20px;
-  }
-}
-
-@media(max-width: 370px) {
-  .nav-links {
-    gap: 8px;
-    font-size: 8px;
+  .footer-logo {
+    font-size: 48px;
   }
 }
 </style>
@@ -568,291 +450,190 @@ footer {
 
 <body>
 
-<!-- NAVIGATION -->
+<div class="loader">VAYYU</div>
 
 <nav>
-  <a class="logo" href="#home">VAYYU.</a>
-
+  <a href="#" class="logo">VAYYU®</a>
   <div class="nav-links">
     <a href="#music">Music</a>
     <a href="#about">About</a>
-    <a href="#gallery">Gallery</a>
+    <a href="#gallery">Visuals</a>
   </div>
 </nav>
 
 <!-- HERO -->
 
-<header class="hero" id="home">
-
-  <img
-    class="hero-img"
-    src="images/IMG_20260417_201832_927.jpg"
-    alt="VAYYU artist portrait">
+<header class="hero">
+  <div class="hero-image"></div>
 
   <div class="hero-content">
+    <div class="eyebrow">INDIAN HIP-HOP ARTIST · LUCKNOW, INDIA</div>
 
-    <div class="hero-small">
-      INDIAN HIP-HOP ARTIST · LUCKNOW, INDIA
+    <h1>
+      <span>VAYYU</span>
+      <span>WORLD.</span>
+    </h1>
+
+    <p class="hero-description">
+      THE CITY. THE CULTURE. THE SOUND.
+    </p>
+
+    <div class="hero-buttons">
+      <a class="btn primary"
+      href="https://open.spotify.com/artist/0Ex0Z0XUVIb67X2Yi1Gixc?si=HQzpD-S7TSuuSon8enDsaw&utm_source=copy-link"
+      target="_blank">LISTEN NOW ↗</a>
+
+      <a class="btn" href="#about">DISCOVER VAYYU</a>
     </div>
-
-    <h1>VAYYU</h1>
-
-    <div class="hero-bottom">
-
-      <p>VYY4L · VAYYU WORLD</p>
-
-      <a href="#music" class="outline-btn">
-        EXPLORE THE MUSIC ↘
-      </a>
-
-    </div>
-
   </div>
 </header>
-
-<!-- INTRO -->
-
-<section class="intro">
-
-  <div class="section-label">
-    THE ARTIST · THE IDENTITY
-  </div>
-
-  <h2>
-    THE VOICE.<br>
-    THE CITY.<br>
-    <span>THE SOUND.</span>
-  </h2>
-
-  <p>
-    From the streets of Lucknow to the wider Indian hip-hop
-    landscape, VAYYU represents a sound shaped by local
-    identity, creative expression and the spirit of cypher
-    culture. His music moves across melodic rap, modern
-    trap and drill, bringing together personal stories,
-    ambition and the energy of the city.
-  </p>
-
-</section>
 
 <!-- MUSIC -->
 
 <section class="release" id="music">
 
-  <div class="section-label">
-    001 / LATEST RELEASE
-  </div>
+  <div class="section-label">01 / LATEST RELEASE</div>
 
-  <div class="section-title">
-    THE MUSIC
-  </div>
+  <h2 class="section-title">THE SOUND<br>OF VAYYU.</h2>
 
   <div class="release-grid">
 
-    <div class="release-art">
-
-      <img
-        src="images/IMG_20261015_182402_666.jpg"
-        alt="BEparwah official cover artwork">
-
+    <div class="release-cover">
+      <img src="images/IMG_20261015_182402_666.jpg"
+      alt="Beparwah artwork">
     </div>
 
     <div class="release-info">
+      <div class="release-tag">VAYYU × BEATIFIC</div>
 
-      <div class="section-label">
-        VAYYU × BEATIFIC
-      </div>
-
-      <h3>BE-<br>PARWAH.</h3>
-
-      <div class="artists">
-        VAYYU · FEAT. BEATIFIC
-      </div>
+      <h3>BEPARWAH</h3>
 
       <p>
-        A collaboration bringing together the sounds of
-        VAYYU and BEATIFIC. Experience BEPARWAH on your
-        favourite streaming platform.
+        A collaboration bringing together VAYYU and BEATIFIC.
+        Discover the sound, the vision and the latest chapter
+        of VAYYU WORLD.
       </p>
 
-      <div class="button-group">
-
-        <a class="button primary"
-           href="https://open.spotify.com/artist/0Ex0Z0XUVIb67X2Yi1Gixc?si=HQzpD-S7TSuuSon8enDsaw&utm_source=copy-link"
-           target="_blank" rel="noopener">
-          SPOTIFY ↗
-        </a>
-
-        <a class="button"
-           href="https://music.apple.com/in/artist/vayyu/1856571517?ls"
-           target="_blank" rel="noopener">
-          APPLE MUSIC ↗
-        </a>
-
-        <a class="button"
-           href="https://www.youtube.com/@VayyuMusic"
-           target="_blank" rel="noopener">
-          YOUTUBE ↗
-        </a>
-
-      </div>
-
+      <a class="btn primary"
+      href="https://open.spotify.com/artist/0Ex0Z0XUVIb67X2Yi1Gixc?si=HQzpD-S7TSuuSon8enDsaw&utm_source=copy-link"
+      target="_blank">STREAM ON SPOTIFY ↗</a>
     </div>
 
   </div>
-
 </section>
 
 <!-- ABOUT -->
 
 <section id="about">
 
-  <div class="story-grid">
+  <div class="about-grid">
 
-    <div class="story-image">
-
-      <img
-        src="images/IMG_20260809_195230_684.jpg"
-        alt="VAYYU behind the music">
-
+    <div class="about-image">
+      <img src="images/IMG_20260417_201832_927.jpg"
+      alt="VAYYU artist portrait">
     </div>
 
-    <div class="story-text">
+    <div>
+      <div class="section-label">02 / THE ARTIST</div>
 
-      <div class="section-label">
-        002 / THE JOURNEY
-      </div>
+      <h2 class="section-title">
+        BEYOND<br>THE SOUND.
+      </h2>
 
-      <div class="section-title">
-        BEYOND<br>THE MUSIC.
-      </div>
+      <p class="about-text">
+        VAYYU is an Indian Hip-Hop artist, rapper and songwriter
+        from Lucknow, Uttar Pradesh, India.
 
-      <p>
-        VAYYU, born Rudra Yadav, is an Indian hip-hop
-        artist, rapper and songwriter from Lucknow,
-        Uttar Pradesh, India.
-      </p>
+        <br><br>
 
-      <p>
-        Rooted in the city's evolving hip-hop culture,
-        his artistic journey reflects a connection to
-        the creative energy of local cyphers and
-        communities, including the culture surrounding
-        Zubaan-e-Lucknow.
-      </p>
+        Rooted in the identity of his city and connected to
+        the creative energy surrounding Lucknow's hip-hop
+        community, his musical journey reflects a blend of
+        melodic rap, modern trap and contemporary hip-hop.
 
-      <p>
-        With a blend of melodic expression, modern
-        production and contemporary hip-hop influences,
-        VAYYU continues to develop a sound and identity
-        of his own.
+        <br><br>
+
+        Inspired by the culture of local cyphers and movements
+        such as Zubaan-e-Lucknow, VAYYU represents a growing
+        generation of voices shaping the city's musical identity.
+
+        <br><br>
+
+        From personal stories to ambition, every release
+        adds another chapter to the VAYYU WORLD.
       </p>
 
       <div class="location">
-        LUCKNOW · UTTAR PRADESH · INDIA
+        LUCKNOW · INDIA
       </div>
-
     </div>
 
   </div>
-
 </section>
 
-<!-- CITY IDENTITY -->
+<!-- VISUALS -->
 
-<section class="city">
+<section class="gallery" id="gallery">
 
-  <img
-    src="images/IMG_20261105_215304_415.jpg"
-    alt="City inspired visual">
+  <div class="section-label">03 / BEHIND THE MUSIC</div>
 
-  <div class="city-content">
-
-    <div class="section-label">
-      ROOTED IN THE CITY
-    </div>
-
-    <h2>LUCKNOW<br>TO THE WORLD.</h2>
-
-    <p>
-      LOCAL ROOTS. UNIVERSAL SOUND.
-    </p>
-
-  </div>
-
-</section>
-
-<!-- GALLERY -->
-
-<section id="gallery">
-
-  <div class="section-label">
-    003 / VISUAL DIARY
-  </div>
-
-  <div class="section-title">
-    THE WORLD<br>OF VAYYU.
-  </div>
+  <h2 class="section-title">
+    THE ARTIST.<br>THE JOURNEY.
+  </h2>
 
   <div class="gallery-grid">
 
-    <img
-      src="images/IMG_20260417_201832_927.jpg"
-      alt="VAYYU portrait">
+    <img src="images/IMG_20260809_195230_684.jpg"
+    alt="VAYYU studio setup">
 
-    <img
-      src="images/IMG_20261015_182402_666.jpg"
-      alt="BEparwah artwork">
-
-    <img
-      src="images/IMG_20260809_195230_684.jpg"
-      alt="VAYYU studio">
-
-    <img
-      src="images/IMG_20261105_215304_415.jpg"
-      alt="Lucknow visual">
+    <img src="images/IMG_20261105_215304_415.jpg"
+    alt="Lucknow city visual">
 
   </div>
-
 </section>
 
 <!-- STREAMING -->
 
-<section class="streaming">
+<section>
 
-  <div class="section-label">
-    LISTEN EVERYWHERE
-  </div>
+  <div class="section-label">04 / FIND THE MUSIC</div>
 
-  <div class="section-title">
-    ENTER<br>VAYYU WORLD.
+  <h2 class="section-title">
+    LISTEN<br>EVERYWHERE.
+  </h2>
+
+  <div class="music-links">
+
+    <a class="music-link"
+    href="https://open.spotify.com/artist/0Ex0Z0XUVIb67X2Yi1Gixc?si=HQzpD-S7TSuuSon8enDsaw&utm_source=copy-link"
+    target="_blank">SPOTIFY ↗</a>
+
+    <a class="music-link"
+    href="https://music.apple.com/in/artist/vayyu/1856571517?ls"
+    target="_blank">APPLE MUSIC ↗</a>
+
+    <a class="music-link"
+    href="https://www.youtube.com/@VayyuMusic"
+    target="_blank">YOUTUBE ↗</a>
+
+    <a class="music-link"
+    href="https://www.instagram.com/vayyumusic/"
+    target="_blank">INSTAGRAM ↗</a>
+
   </div>
+</section>
+
+<!-- CITY -->
+
+<section class="city">
+
+  <div class="section-label">226016 · UTTAR PRADESH</div>
+
+  <h2>VAYYU WORLD.</h2>
 
   <p>
-    Discover the music. Follow the journey.
+    BORN FROM THE CITY. BUILT THROUGH MUSIC.
   </p>
-
-  <div class="stream-links">
-
-    <a class="button primary"
-       href="https://open.spotify.com/artist/0Ex0Z0XUVIb67X2Yi1Gixc?si=HQzpD-S7TSuuSon8enDsaw&utm_source=copy-link"
-       target="_blank" rel="noopener">
-      SPOTIFY
-    </a>
-
-    <a class="button"
-       href="https://music.apple.com/in/artist/vayyu/1856571517?ls"
-       target="_blank" rel="noopener">
-      APPLE MUSIC
-    </a>
-
-    <a class="button"
-       href="https://www.youtube.com/@VayyuMusic"
-       target="_blank" rel="noopener">
-      YOUTUBE
-    </a>
-
-  </div>
 
 </section>
 
@@ -860,42 +641,26 @@ footer {
 
 <footer>
 
-  <div class="footer-logo">
-    VAYYU
-  </div>
-
-  <div class="footer-tag">
-    VYY4L · VAYYU WORLD
-  </div>
+  <div class="footer-logo">VAYYU WORLD</div>
 
   <div class="socials">
-
     <a href="https://www.instagram.com/vayyumusic/"
-       target="_blank" rel="noopener">
-      INSTAGRAM
-    </a>
+    target="_blank">INSTAGRAM</a>
 
     <a href="https://www.youtube.com/@VayyuMusic"
-       target="_blank" rel="noopener">
-      YOUTUBE
-    </a>
+    target="_blank">YOUTUBE</a>
 
     <a href="https://open.spotify.com/artist/0Ex0Z0XUVIb67X2Yi1Gixc?si=HQzpD-S7TSuuSon8enDsaw&utm_source=copy-link"
-       target="_blank" rel="noopener">
-      SPOTIFY
-    </a>
+    target="_blank">SPOTIFY</a>
 
     <a href="https://music.apple.com/in/artist/vayyu/1856571517?ls"
-       target="_blank" rel="noopener">
-      APPLE MUSIC
-    </a>
-
+    target="_blank">APPLE MUSIC</a>
   </div>
 
   <div class="copyright">
     © 2026 VAYYU WORLD. ALL RIGHTS RESERVED.
     <br><br>
-    LUCKNOW, INDIA.
+    VYY4L 🌪️
   </div>
 
 </footer>
